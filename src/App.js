@@ -1,10 +1,18 @@
-import logo from './logo.svg';
+
 import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <NavBar/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h1 className="text-3xl font-bold underline">CREANDO TIENDA LINEA CON REACT/TAILWIND/DAYSI UI</h1>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -18,7 +26,7 @@ function App() {
           Learn React
         </a>
         <h1>E-COMMERCER CON REACT</h1>
-      </header>
+      </header> */}
     </div>
   );
 }
