@@ -1,6 +1,8 @@
 
 import './App.css';
+import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
+import Saludo from './components/Saludo';
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
       <br></br>
       <br></br>
       <h1 className="text-3xl font-bold underline">CREANDO TIENDA LINEA CON REACT/TAILWIND/DAYSI UI</h1>
+      <ItemListContainer/>
+      <Saludo nombre="Esmeralda"/>
+     
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -28,6 +33,7 @@ function App() {
         <h1>E-COMMERCER CON REACT</h1>
       </header> */}
     </div>
+    
   );
 }
 
