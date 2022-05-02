@@ -3,7 +3,7 @@ import ItemCount from './ItemCount'
 
 const Item = ({productos}) => {
 
-    const {id,nombre,precio,descripcion,imagen,stock }= productos
+    const {nombre,precio,descripcion,imagen,stock }= productos
 
   return (
     <div>
