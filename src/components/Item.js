@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 
-const item = ({productos}) => {
+const Item = ({productos}) => {
 
     const {id,nombre,precio,descripcion,imagen,stock }= productos
 
@@ -32,4 +32,4 @@ const item = ({productos}) => {
   )
 }
 
-export default item
+export default Item
