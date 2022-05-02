@@ -16,7 +16,7 @@ function App() {
       <br></br>
       <h1 className="text-3xl font-bold underline">CREANDO TIENDA LINEA CON REACT/TAILWIND/DAYSI UI</h1>
       <ItemListContainer/>
-      
+  
       <Saludo nombre="Esmeralda"/>
   
       
