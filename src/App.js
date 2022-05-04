@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import Saludo from './components/Saludo';
@@ -9,13 +9,10 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      
       <h1 className="text-3xl font-bold underline">CREANDO TIENDA LINEA CON REACT/TAILWIND/DAYSI UI</h1>
       <ItemListContainer/>
+      <ItemDetailContainer/>
   
       <Saludo nombre="Esmeralda"/>
   

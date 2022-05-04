@@ -1,7 +1,7 @@
 
 export const productos = [
     {
-    id: "0001",
+    id: 1,
     nombre: "Sudadera Diseño Ajolote",
     precio: 550,
     descripcion: "..........descripcion del producto",
@@ -9,7 +9,7 @@ export const productos = [
     stock: 3
     },
     {
-    id: "0002",
+    id: 2,
     nombre: "Fanzine Cosas que Decir",
     precio: 220,
     descripcion: "Impreso en serigrafía 2 tintas,Papel opalina de 135 gr.",
@@ -18,7 +18,7 @@ export const productos = [
      
     },
     {
-      id: "0003",
+      id: 3,
       nombre: "Agenda Diseño Personalizado",
       precio: 250,
       descripcion: "..........descripcion del producto",
@@ -27,7 +27,7 @@ export const productos = [
        
     },
     {
-      id: "0004",
+      id: 4,
       nombre: "Pocillo de Peltre",
       precio: 150,
       descripcion: "..........descripcion del producto",

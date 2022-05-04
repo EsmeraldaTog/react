@@ -1,6 +1,6 @@
 import React from 'react'
 
-const saludo = (props) => {
+const Saludo = (props) => {
   return (
 
     <h1 className= "tracking-wide bg-gradient-to-r from-cyan-500 to-blue-500"> Bienvenido {props.nombre} </h1>
@@ -8,4 +8,4 @@ const saludo = (props) => {
   )
 }
 
-export default saludo
+export default Saludo
