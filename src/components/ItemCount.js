@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 
+
 const ItemCount = ({stock, initial}) => {
 
   const [count, setCount] = useState(Number(initial))
@@ -23,7 +24,7 @@ const ItemCount = ({stock, initial}) => {
 			<button onClick={addHandler}>+</button>
 		</div>
 			<button className="btn btn-primary mx-32 mt-4">Comprar</button>
-			
+	       
 		</div>
 	)
 }
