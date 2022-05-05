@@ -9,10 +9,10 @@ const ItemDetail = () => {
 
   const {productoId}= useParams()
 
-    const [product, setProduct] =  useState([])
+    const [product, setProduct] =  useState({})
     
     useEffect(() => {
-      setProduct(productos.find( p => p.id === productoId ) )
+      setProduct(productos.find( p => p.id == productoId ) )
     },[productoId]);
     
   
