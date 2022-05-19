@@ -39,7 +39,7 @@ return (
     <h4 className="text-center font-bold text-xl">{product.price}</h4>
     <h4 className="text-center text-xl">{product.descripcion}</h4>
     {terminar ? (<Link to="/cart" className="btn btn-primary mx-32 mt-4 bg-secondary"> Terminar Comprar</Link>) :
-     (<ItemCount stock={product.stock} initial={1} onAdd ={onAdd}/>)}
+     (<ItemCount stock={product.stock} initial={1} onAdd ={onAdd} id={productoId}/>)}
     
   
   </div>

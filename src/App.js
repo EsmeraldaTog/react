@@ -7,10 +7,16 @@ import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import NoVocals from './components/NoVocals';
 import Saludo from './components/Saludo';
+import AppContextProvider from './context/AppContext';
+import CartContextProvider from './context/CartContext';
 
 function App() {
   return (
     <div className="App">
+      <AppContextProvider>
+
+      <CartContextProvider>
+
       <BrowserRouter>
       <NavBar></NavBar>
       <Routes>
@@ -27,6 +33,8 @@ function App() {
   
       <Saludo nombre="Esmeralda"/>
   
+      </CartContextProvider>
+      </AppContextProvider>
      
     </div>
     

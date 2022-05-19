@@ -4,7 +4,7 @@ import ItemCount from './ItemCount'
 
 const Item = ({productos}) => {
 
-    const {id,nombre,precio,descripcion,imagen,stock }= productos
+    const {id,nombre,precio,descripcion,imagen,stock, }= productos
 
   return (
     <div>
@@ -16,7 +16,7 @@ const Item = ({productos}) => {
     <h2 className="card-title">{nombre}</h2>
     <h4>${precio}</h4>
     <div className="card-actions">
-          <ItemCount stock={stock} initial ={1}/>
+          {/* <ItemCount stock={stock} initial ={1}/> */}
           <Link to={`/producto/${id}`} className="btn btn-primary mx-32 mt-4">Detalle del Producto</Link>
    
     </div>
