@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Cart from './components/Cart';
 import ItemDetail from './components/ItemDetail';
 
 import ItemListContainer from './components/ItemListContainer';
@@ -24,10 +25,11 @@ function App() {
         {/* <Route path ='/sudaderas' element ={<ItemDetailContainer/>}/> */}
         <Route path ='/producto/:productoId' element= {<ItemDetail/>}/>
         <Route path ='/vocales' element= {<NoVocals/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
       </BrowserRouter>
     
-    
+
       <h1 className="text-3xl font-bold underline">CREANDO TIENDA LINEA CON REACT/TAILWIND/DAYSI UI</h1>
     
   
