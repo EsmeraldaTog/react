@@ -1,32 +1,38 @@
 import { useEffect, useState } from "react";
-import { productos } from "../data/productos";
+
 import ItemDetail from "./ItemDetail";
+import { doc,  getDoc,  getFirestore } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-  const [product, setProduct] = useState([]);
+  const {productoId} = useParams();
+
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts()
-  }, []);
+    const db = getFirestore()
 
-  const getProducts = () => {
-    const getProductPromise = new Promise((resolve,reject) => {
-      setTimeout(() => {
-        resolve(productos);
-      }, 5000);
-    });
-    
-
-   getProductPromise.then(data => {
-      setProduct(data);
+    const getProducts = doc(db, "items",productoId)
+    getDoc(getProducts).then (snapshot => {
+  
+      if (snapshot.exists()) {
+        setProducts ({id:snapshot.id, ...snapshot.data()})
+      }
     })
-  }
+  }, [productoId])
+
     
+  
+
+
+
+
    
 return (
     <div className="grid grid-cols-3 gap-2">
-      {product.map(m => <ItemDetail key={m.id} item={m}/>)}
+      <ItemDetail key={products.id} producto= {products}/>
+      )
     </div>
   )
 }

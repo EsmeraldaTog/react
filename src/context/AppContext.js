@@ -1,5 +1,6 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { productos } from "../data/productos";
+
 
 
 const AppContext = createContext()
@@ -9,25 +10,14 @@ export const useAppContext = () => useContext(AppContext)
 const AppContextProvider = ({children}) => {
 	const [products, setProduct] = useState([])
 
-	useEffect(() => {
-    getProductos()
-	}, [])
+  useEffect(() => {
+    const db = getFirestore();
 
-	const getProductos = () => {
-    const getProductPromise = new Promise((resolve) => {
-      
-        resolve(productos);
-      
-    })
-
-    getProductPromise.then((data) => {
-      setProduct(data)
-    })
-  }
-
-
-
-  
+    const getProducts = collection(db, "items");
+    getDocs(getProducts).then((snapshot) => {
+      setProduct(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+  }, []);
    
 
   return <AppContext.Provider 
