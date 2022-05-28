@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
   const {productoId} = useParams();
 
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({});
 
   useEffect(() => {
     const db = getFirestore()
@@ -31,8 +31,8 @@ const ItemDetailContainer = () => {
    
 return (
     <div className="grid grid-cols-3 gap-2">
-      <ItemDetail key={products.id} producto= {products}/>
-      )
+      <ItemDetail producto={products}/>
+     
     </div>
   )
 }

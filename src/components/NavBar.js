@@ -12,15 +12,17 @@ const NavBar = () => {
   <div className="navbar-center  lg:flex">
     <ul className="menu menu-horizontal p-2">
       <li><Link to='/'>Inicio</Link></li>
-      <li tabindex="0">
+      <li tabIndex="0">
         <a href="#/">
           PRODUCTOS
           <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
         <ul className="p-2">
-          <li><Link to='/sudaderas'>Sudaderas</Link></li>
-          <li><a href="#/">Agendas</a></li>
-          <li><a href="#/">Ilustracion</a></li>
+          <li><Link to='/productos/sudaderas'>Sudaderas</Link></li>
+          <li><Link to='/productos/agendas'>Agendas</Link></li>
+          <li><Link to='/productos/ilustracion'>Ilustracion</Link></li>
+          {/* <li><a href="/productos/agendas">Agendas</a></li>
+          <li><a href="/productos/ilustracion">Ilustracion</a></li> */}
         </ul>
       </li>
       <li><a href="#/">CONTACTO</a></li>

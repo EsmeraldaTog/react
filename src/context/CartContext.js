@@ -11,7 +11,7 @@ const CartContextProvider= ({children}) =>{
 
 const [cart, setCart] = useState([])
 
-const IsInCart =(id) => cart.find( product => product.id == id )
+const IsInCart =(id) => cart.find( product => product.id === id )
 
 const addItem = (producto, cantidad)=>{
 
@@ -43,10 +43,14 @@ const vaciarCarrito = () => setCart([])
 
 console.log (cart)
 
+const cartTotal = () => {
+    let totalCart = 0
+    cart.forEach (item => totalCart += (item.precio*item.quantify))
+    return totalCart
+}
 
 
-
-return <CartContext.Provider value = {{cart,addItem,borrar,vaciarCarrito,setCart}}>{children}</CartContext.Provider>
+return <CartContext.Provider value = {{cart,addItem,borrar,vaciarCarrito,setCart,cartTotal}}>{children}</CartContext.Provider>
 
 }
 

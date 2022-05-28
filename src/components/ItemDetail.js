@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react'
 
 import ItemCount from './ItemCount';
 import {Link} from "react-router-dom";
+import { useCartContext } from '../context/CartContext';
 
 
 
-const ItemDetail = (producto) => {
+const ItemDetail = ({producto}) => {
 
-  
-  
-  const {productoId}= useParams()
+  const {imagen,nombre,precio,stock,descripcion}= producto
+  const {addItem } = useCartContext()
+  // const {productoId}= useParams()
 
   
   const [ terminar, setTerminar]= useState(false)
@@ -18,6 +18,7 @@ const ItemDetail = (producto) => {
   function onAdd(count){
     setTerminar(true)
     console.log(count);
+    addItem(producto,count);
     
 
   }
@@ -29,14 +30,14 @@ return (
     
 <div className="center card card-compact w-96 bg-base-100 shadow-xl">
   <figure>
-    <img src={producto.imagen} alt="" />
+    <img src={imagen} alt="kkk" />
   </figure>
   <div className="card-body">
-    <h2 className="text-center text-xl">{producto.nombre}</h2>
-    <h4 className="text-center font-bold text-xl">{producto.precio}</h4>
-    <h4 className="text-center text-xl">{producto.descripcion}</h4>
+    <h2 className="text-center text-xl">{nombre}</h2>
+    <h4 className="text-center font-bold text-xl">{precio}</h4>
+    <h4 className="text-center text-xl">{descripcion}</h4>
     {terminar ? (<Link to="/cart" className="btn btn-primary mx-32 mt-4 bg-secondary"> Terminar Comprar</Link>) :
-     (<ItemCount stock={producto.stock} initial={1} onAdd ={onAdd} id={productoId}/>)}
+     (<ItemCount stock={stock} initial={1} onAdd ={onAdd}/>)}
     
   
   </div>

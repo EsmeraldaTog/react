@@ -2,7 +2,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Cart from './components/Cart';
-import ItemDetail from './components/ItemDetail';
+
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
@@ -22,8 +23,9 @@ function App() {
       <NavBar></NavBar>
       <Routes>
         <Route path ='/' element ={<ItemListContainer/>}/>
+        <Route path ='productos/:categoryId' element ={<ItemListContainer/>}/>
         {/* <Route path ='/sudaderas' element ={<ItemDetailContainer/>}/> */}
-        <Route path ='/producto/:productoId' element= {<ItemDetail/>}/>
+        <Route path ='/producto/:productoId' element= {<ItemDetailContainer/>}/>
         <Route path ='/vocales' element= {<NoVocals/>}/>
         <Route path='/cart' element={<Cart/>}/>
       </Routes>
