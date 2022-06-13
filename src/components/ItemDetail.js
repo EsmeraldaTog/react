@@ -33,9 +33,9 @@ return (
     <img src={imagen} alt="kkk" />
   </figure>
   <div className="card-body">
-    <h2 className="text-center text-xl">{nombre}</h2>
-    <h4 className="text-center font-bold text-xl">{precio}</h4>
-    <h4 className="text-center text-xl">{descripcion}</h4>
+    <h2 className="text-center text-xl">Nombre: {nombre}</h2>
+    <h4 className="text-center font-bold text-xl"> Precio:{precio}</h4>
+    <h4 className="text-center text-xl">Descripcion:<br></br>{descripcion}</h4>
     {terminar ? (<Link to="/cart" className="btn btn-primary mx-32 mt-4 bg-secondary"> Terminar Comprar</Link>) :
      (<ItemCount stock={stock} initial={1} onAdd ={onAdd}/>)}
     

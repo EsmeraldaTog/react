@@ -7,24 +7,20 @@ export const  useCartContext= ()=>useContext(CartContext)
 
 
 const CartContextProvider= ({children}) =>{
+    const [cart, setCart] = useState([])
 
+    const IsInCart =(id) => cart.find( product => product.id === id )
 
-const [cart, setCart] = useState([])
-
-const IsInCart =(id) => cart.find( product => product.id === id )
-
-const addItem = (producto, cantidad)=>{
-
-    const newCart =[...cart]
-     
-    const productoIsInCart =IsInCart(producto.id)
-    if(productoIsInCart){
+    const addItem = (producto, cantidad)=>{
+        const newCart =[...cart]
+        const productoIsInCart =IsInCart(producto.id)
+        if(productoIsInCart){
         newCart[newCart.findIndex((prod)=> prod.id === productoIsInCart.id )].quantify+= cantidad
-    setCart(newCart)
-    return
-    }
- producto.quantify = cantidad
- setCart([...newCart,producto])
+        setCart(newCart)
+        return
+            }
+            producto.quantify = cantidad
+            setCart([...newCart,producto])
 }
 
 const borrar = (producto) => {
@@ -41,7 +37,9 @@ const borrar = (producto) => {
 
 const vaciarCarrito = () => setCart([])
 
-console.log (cart)
+const calcularProductos = () => {
+    return cart.reduce((cantidad, cart) => cantidad + cart.quantify, 0);
+  }
 
 const cartTotal = () => {
     let totalCart = 0
@@ -50,7 +48,7 @@ const cartTotal = () => {
 }
 
 
-return <CartContext.Provider value = {{cart,addItem,borrar,vaciarCarrito,setCart,cartTotal}}>{children}</CartContext.Provider>
+return <CartContext.Provider value = {{cart,addItem,borrar,vaciarCarrito,setCart,cartTotal,calcularProductos}}>{children}</CartContext.Provider>
 
 }
 
