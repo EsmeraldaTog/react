@@ -35,7 +35,12 @@ const NavBar = () => {
               <li>
                 <Link to="/productos/ilustracion">Ilustracion</Link>
               </li>
-              
+              <li>
+                <Link to="/productos/hat">Bucket Hat</Link>
+              </li>
+              <li>
+                <Link to="/productos/tote">Tote Bags</Link>
+              </li>
             </ul>
           </li>
           </div>

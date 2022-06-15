@@ -5,8 +5,7 @@ import { useParams } from "react-router-dom";
 import Item from "./Item";
 
 const ItemList = () => {
-
-  const { categoryId } =useParams();
+  const { categoryId } = useParams();
 
   const [products, setProducts] = useState([]);
 
@@ -15,24 +14,24 @@ const ItemList = () => {
 
     const getProducts = collection(db, "items");
     getDocs(getProducts).then((snapshot) => {
-      const productsList =[]
-      snapshot.docs.forEach(s =>{
-      productsList.push ({id:s.id, ...s.data()})
-      })
+      const productsList = [];
+      snapshot.docs.forEach((s) => {
+        productsList.push({ id: s.id, ...s.data() });
+      });
       // setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       if (!categoryId) {
-        setProducts(productsList)
-        
-      }
-      else{
-        setProducts(productsList.filter ((p)=>p.category===categoryId))
+        setProducts(productsList);
+      } else {
+        setProducts(productsList.filter((p) => p.category === categoryId));
       }
     });
   }, [categoryId]);
 
   return (
     <div className="grid grid-cols-3 gap-2">
-      {products.map(m => <Item key={m.id} productos={m} />)}
+      {products.map((m) => (
+        <Item key={m.id} productos={m} />
+      ))}
     </div>
   );
 };

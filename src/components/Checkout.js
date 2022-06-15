@@ -66,9 +66,9 @@ const Checkout = () => {
 
                 {/* Título */}
                 <h1 className=" self-center mb-6">Checkout</h1>
-                {/* Resúmen */}
+                
                 <div className="flex flex-col self-center w-full md:w-1/2 mr-6">
-                    <h2 className="p-3 font-semibold">Resúmen de compra:</h2>
+                    <h2 className="p-3 font-semibold">Resumen de compra:</h2>
                     <div className="flex flex-col border bg-gray-200 p-4 mt-6 font-light text-sm text-gray-600 tracking-wide leading-normal">
                         <div className="flex flex-row justify-between ">
                             <p>Cantidad de Productos:</p>

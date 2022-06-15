@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
 
    
 return (
-    <div className="grid grid-cols-3 gap-2">
+    <div>
       <ItemDetail producto={products}/>
      
     </div>
