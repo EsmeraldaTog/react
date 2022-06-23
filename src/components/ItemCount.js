@@ -36,15 +36,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
 
 	return (
-		<div>
-		<div className="flex justify-evenly mt-2 bg-gray-200 rounded-xl p-4">
-			<button onClick={resHandler}>-</button>
+		<>
+		<div className="w-24 bg-gray-200">
+			<button className="font-Confortaa w-4 "onClick={resHandler}>-</button>
 			<span>{count}</span>
-			<button onClick={addHandler}>+</button>
+			<button className= "font-Confortaa w-4" onClick={addHandler}>+</button>
 		</div>
-			<button onClick= {()=> handleClick(count)} className="btn btn-primary mx-32 mt-4">Agregar al Carrito</button>
+			<button onClick= {()=> handleClick(count)} className="font-Confortaa btn btn-primary mx-32 mt-4">Agregar al Carrito</button>
 	       
-		</div>
+		</>
 	)
 }
 

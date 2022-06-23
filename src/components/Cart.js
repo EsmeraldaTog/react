@@ -14,18 +14,36 @@ const Cart = () => {
     
   
  
-    <h2> Carrito de Compras</h2>
-    {cart.map((i) =>(
-    <div key={i.id}>
-        <div className="flex h-fit md:text-2xl items-center">
-                        <img src={i.imagen} alt="" className="w-80 md:ml-8"  />
-                        <div className="flex flex-nowrap flex-col items-start ml-4">
-                          <p className="text-sm">{i.nombre}</p>
-                          <p className="text-lg font-bold">${i.precio}</p>
-                          <p className="text-lg font-bold">Cantidad: {i.quantify}</p>
-                        </div> 
-                        </div> 
-                        </div>))}
+    <h2 className="font-Confortaa"> Carrito de Compras</h2>
+    
+        <table className="table-auto inline-block overflow-x-auto whitespace-nowrap">
+    <thead>
+    <tr>
+    <th>Imagen</th>
+    <th>Producto</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+    </tr>
+  </thead>
+         <tbody>{cart.map((i) =>(
+         <tr key={i.id}>
+         
+        <td className=''><img src={i.imagen} alt="" className="w-4"/></td>
+        <td className=''><p className="text-sm">{i.nombre}</p></td>
+        <td className=''><p className="text-lg ">${i.precio}</p></td>
+        <td className=''><p className="text-lg ">{i.quantify}</p></td>
+    </tr>))}
+   
+  </tbody>
+</table>
+
+
+                        
+                    
+                          
+                          
+                          
+                       
                         {
                           cart.length === 0? (
                             <div className="h-[calc(100vh-300px)] grid place-content-center">

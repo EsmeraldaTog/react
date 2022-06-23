@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Cart from './components/Cart';
+import Saludo from './components/Saludo';
 import Checkout from './components/Checkout';
 
 import ItemDetailContainer from './components/ItemDetailContainer';
@@ -15,28 +16,34 @@ import CartContextProvider from './context/CartContext';
 
 function App() {
   return (
-    <div className="App">
-      <AppContextProvider>
 
-      <CartContextProvider>
-
-      <BrowserRouter>
-      <NavBar></NavBar>
+  <AppContextProvider>
+  <CartContextProvider>
+  <BrowserRouter>
+    <div className="App w-full">
+      <div className= "flex flex-col">
+       <header>
+          <NavBar></NavBar>
+        </header>
+      <main className="flex flex-col md:flex-row lg:flex-row p-8">
+      <Saludo/>
       <Routes>
         <Route path ='/' element ={<ItemListContainer/>}/>
         <Route path ='productos/:categoryId' element ={<ItemListContainer/>}/>
-        {/* <Route path ='/sudaderas' element ={<ItemDetailContainer/>}/> */}
         <Route path ='/producto/:productoId' element= {<ItemDetailContainer/>}/>
         <Route path ='/vocales' element= {<NoVocals/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/checkout' element={<Checkout/>}/>
       </Routes>
-      </BrowserRouter>
-  
-      </CartContextProvider>
-      </AppContextProvider>
-     
+      </main>
+
+      
     </div>
+    </div>
+    </BrowserRouter>
+    </CartContextProvider>
+    </AppContextProvider>
+     
     
   );
 }

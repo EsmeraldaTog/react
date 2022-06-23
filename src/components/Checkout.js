@@ -59,10 +59,9 @@ const Checkout = () => {
     // Render del checkout
     return (
         <>
-            {/* Contenedor checkout */}
-            {/* Detalle de facturación */}
+            
             <div className="flex justify-center items-center xl:max-w-7xl mx-6 xl:mx-auto">
-                <div className="flex w-full flex-col justify-center items-center">
+                <div className=" flex w-full flex-col justify-center items-center">
 
                 {/* Título */}
                 <h1 className=" self-center mb-6">Checkout</h1>

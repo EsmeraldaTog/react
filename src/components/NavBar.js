@@ -4,54 +4,33 @@ import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar-start"></div>
-      <div className="navbar-center  lg:flex">
-        <ul className="menu menu-horizontal p-2">
-          <li>
-            <Link to="/">Inicio</Link>
-          </li> <div className="dropdown dropdown-down">
-          <li tabIndex="0">
-            <a href="#/">
-              PRODUCTOS
-              <svg
-                className="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-              </svg>
-            </a>
-           
-            <ul tabIndex="0" className=" dropdown-content menu menu-vertical p-2 shadow bg-base-100 rounded-box w-52shadow bg-base-100 rounded-box w-52">
-              <li>
-                <Link to="/productos/sudaderas">Sudaderas</Link>
-              </li>
-              <li>
-                <Link to="/productos/agendas">Agendas</Link>
-              </li>
-              <li>
-                <Link to="/productos/ilustracion">Ilustracion</Link>
-              </li>
-              <li>
-                <Link to="/productos/hat">Bucket Hat</Link>
-              </li>
-              <li>
-                <Link to="/productos/tote">Tote Bags</Link>
-              </li>
-            </ul>
-          </li>
-          </div>
-          <li>
-            <a href="#/">CONTACTO</a>
-          </li>
-        </ul>
-      </div>
-      <CartWidget />
+ <div className="navbar bg-base-100 lg:flex justify-between p-8">
+
+ 
+    <div className=" lg:flex flex-col">
+      <img src="https://i.ibb.co/RjyL5TT/logo.jpg" className="object-scale-down h-6/12 w-6/12" alt="logo" border="0"/>
+      <h1 className="font-Confortaa text-xs">Ilustracion & Diseño</h1>
     </div>
+    
+    <ul className="menu menu-horizontal p-2  lg:flex justify-between font-Confortaa text-sm">
+        
+     
+      <li>
+            <Link to="/">Home</Link>
+      </li>
+      <li>
+        <a href="#/"> Acerca de </a>
+      </li>
+          
+          <li>
+            <a href="#/">Contacto</a>
+          </li>
+          
+     </ul>
+   
+      <CartWidget />
+ </div>
   );
-};
+}
 
 export default NavBar;

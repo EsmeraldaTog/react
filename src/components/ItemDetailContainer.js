@@ -30,10 +30,10 @@ const ItemDetailContainer = () => {
 
    
 return (
-    <div>
+    <>
       <ItemDetail producto={products}/>
      
-    </div>
+    </>
   )
 }
 
