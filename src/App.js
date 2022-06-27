@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Cart from './components/Cart';
-import Saludo from './components/Saludo';
+
 import Checkout from './components/Checkout';
 
 import ItemDetailContainer from './components/ItemDetailContainer';
@@ -21,12 +21,12 @@ function App() {
   <CartContextProvider>
   <BrowserRouter>
     <div className="App w-full">
-      <div className= "flex flex-col">
+      <div className= " flex flex-col">
        <header>
           <NavBar></NavBar>
         </header>
       <main className="flex flex-col md:flex-row lg:flex-row p-8">
-      <Saludo/>
+    
       <Routes>
         <Route path ='/' element ={<ItemListContainer/>}/>
         <Route path ='productos/:categoryId' element ={<ItemListContainer/>}/>
